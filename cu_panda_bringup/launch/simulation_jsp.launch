@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!-- this launch file is the most basic simulation of the robot -->
+<launch>
+    <arg name="rviz" default="true" />
+
+    <arg name="joint_sliders" default="false" />
+    <arg name="frequency" default="30.0" />
+
+    <include file="$(find cu_panda_description)/launch/upload_description.launch" />
+
+    <group ns="joint_state_publisher">
+    <param name="publish_frequency" value="$(arg frequency)" />
+<rosparam>
+zeros:
+            panda_joint1: 0.0
+            panda_joint2: 0.0
+            panda_joint3: 0.0
+            panda_joint4: 0.0
+            panda_joint5: 0.0
+            panda_joint6: 1.57
+            panda_joint7: 0.79
+            panda_finger_joint1: 0.04
+</rosparam>
+    </group>
+    <node unless="$(arg joint_sliders)" pkg="joint_state_publisher" type="joint_state_publisher" name="joint_state_publisher"/>
+    <node if="$(arg joint_sliders)" pkg="joint_state_publisher_gui" type="joint_state_publisher_gui" name="joint_state_publisher"/>
+
+    <node pkg="robot_state_publisher" type="robot_state_publisher" name="robot_state_publisher">
+        <param name="publish_frequency" value="$(arg frequency)" />
+    </node>
+
+    <node if="$(arg rviz)" pkg="rviz" type="rviz" name="$(anon rviz)" args="-d $(dirname)/../config/default.rviz" />
+</launch>

@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<package format="2">
+  <name>cu_panda_description</name>
+  <version>0.0.0</version>
+  <description>The cu_panda_description package</description>
+
+  <maintainer email="migoerner@constructor.university">Michael Goerner</maintainer>
+  <license>BSD</license>
+
+  <exec_depend>franka_description</exec_depend>
+
+  <buildtool_depend>catkin</buildtool_depend>
+</package>
