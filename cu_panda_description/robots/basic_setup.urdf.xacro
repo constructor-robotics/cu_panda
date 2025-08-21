@@ -65,4 +65,72 @@
     <origin xyz="0 0 0.026" rpy="0 0 0"/>
   </joint>
 
+  <link name="window_collider">
+    <collision>
+      <geometry>
+        <box size="1.0 0.2 1.5"/>
+      </geometry>
+      <origin xyz="0 0 0.0" rpy="0 0 0"/>
+    </collision>
+    <visual>
+      <geometry>
+        <box size="1.0 0.2 1.5"/>
+      </geometry>
+      <origin xyz="0 0 0.0" rpy="0 0 0"/>
+      <material name="virtualvolume">
+        <color rgba="0.3 0.3 0.3 0.1"/>
+      </material>
+    </visual>
+  </link>
+
+  <joint name="window_collider_joint" type="fixed">
+    <child link="window_collider"/>
+    <parent link="table"/>
+    <origin xyz="0 ${-1.074/2-0.1-0.15} ${1.5/2}" rpy="0 0 0"/>
+  </joint>
+
+  <link name="wall">
+    <collision>
+      <geometry>
+        <box size="0.1 2.0 1.5"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </collision>
+    <visual>
+      <geometry>
+        <box size="0.1 2.0 1.5"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <material name="lightgrey"/>
+    </visual>
+  </link>
+
+  <joint name="wall_joint" type="fixed">
+    <child link="wall"/>
+    <parent link="table"/>
+    <origin xyz="${-0.35-0.05-0.19} 0 0.75" rpy="0 0 0"/>
+  </joint>
+
+  <link name="behind_table_collider">
+    <collision>
+      <geometry>
+        <box size="0.19 1.7 ${0.08+0.026}"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </collision>
+    <visual>
+      <geometry>
+        <box size="0.19 1.7 ${0.08+0.026}"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <material name="lightgrey"/>
+    </visual>
+  </link>
+
+  <joint name="behind_table_collider_joint" type="fixed">
+    <child link="behind_table_collider"/>
+    <parent link="table"/>
+    <origin xyz="${-0.35-0.095} 0 ${0.026}" rpy="0 0 0"/>
+  </joint>
+
 </robot>
