@@ -1,0 +1,11 @@
+moveit_setup_assistant_config:
+  URDF:
+    package: cu_panda_description
+    relative_path: robots/basic_setup.urdf.xacro
+    xacro_args: ""
+  SRDF:
+    relative_path: config/cu_panda.srdf
+  CONFIG:
+    author_name: Michael Goerner
+    author_email: migoerner@constructor.university
+    generated_timestamp: 1755853991
