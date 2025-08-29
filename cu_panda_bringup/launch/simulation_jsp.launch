@@ -29,5 +29,5 @@ zeros:
         <param name="publish_frequency" value="$(arg frequency)" />
     </node>
 
-    <node if="$(arg rviz)" pkg="rviz" type="rviz" name="$(anon rviz)" args="-d $(dirname)/../config/default.rviz" />
+    <include file="$(dirname)/rviz.launch" if="$(arg rviz)" />
 </launch>
