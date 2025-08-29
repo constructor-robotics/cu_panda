@@ -1,0 +1,24 @@
+config:
+    num_buttons_per_row: 3
+    button_width: 140
+    button_height: 60
+    font: LiberationMono:Bold
+scripts:
+    - label: Desk
+      script: desk
+      tooltip: manufacturer interface to start robot
+      group: A-setup-robot
+    - label: Launch ROS
+      script: launch-robot
+      tooltip: |
+        standard launch file
+        only use after Desk initialization
+      group: A-setup-robot
+      terminal: true
+    - label: Reset Error
+      script: reset-franka-error
+      tooltip: |
+        reset error state after invalid control
+        do not use repeatedly.
+        resolve the underlying error.
+      group: B-runtime
