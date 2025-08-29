@@ -1,5 +1,5 @@
 config:
-    num_buttons_per_row: 3
+    num_buttons_per_row: 2
     button_width: 140
     button_height: 60
     font: LiberationMono:Bold
@@ -18,7 +18,14 @@ scripts:
     - label: Reset Error
       script: reset-franka-error
       tooltip: |
-        reset error state after invalid control
-        do not use repeatedly.
-        resolve the underlying error.
+        reset error state
+        after invalid control
+      group: B-runtime
+    - label: Move Home
+      script: move-home
+      tooltip: move arm to home position
+      group: B-runtime
+    - label: Present Gripper
+      script: move-present-gripper
+      tooltip: move arm to present gripper position
       group: B-runtime

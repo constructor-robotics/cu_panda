@@ -18,14 +18,25 @@
     </group>
     <!--GROUP STATES: Purpose: Define a named state for a particular group, in terms of joint values. This is useful to define states like 'folded arms'-->
     <group_state name="home" group="arm">
-        <joint name="panda_joint1" value="0"/>
-        <joint name="panda_joint2" value="0"/>
-        <joint name="panda_joint3" value="0"/>
-        <joint name="panda_joint4" value="-1.5708"/>
-        <joint name="panda_joint5" value="0"/>
-        <joint name="panda_joint6" value="1.57"/>
-        <joint name="panda_joint7" value="0.79"/>
+        <joint name="panda_joint1" value="0.7593883575493828"/>
+        <joint name="panda_joint2" value="-0.1967880399935545"/>
+        <joint name="panda_joint3" value="0.3601177533007504"/>
+        <joint name="panda_joint4" value="-2.8748549823723764"/>
+        <joint name="panda_joint5" value="0.1480462713009781"/>
+        <joint name="panda_joint6" value="2.6951092229949105"/>
+        <joint name="panda_joint7" value="1.747318634997639"/>
     </group_state>
+    <group_state name="present_gripper" group="arm">
+        <joint name="panda_joint1" value="-1.007538294916409"/>
+        <joint name="panda_joint2" value="-1.5137732266375894"/>
+        <joint name="panda_joint3" value="1.5487000532341397"/>
+        <joint name="panda_joint4" value="-1.8614056073673624"/>
+        <joint name="panda_joint5" value="0.026975830040376875"/>
+        <joint name="panda_joint6" value="2.8865027188240906"/>
+        <joint name="panda_joint7" value="2.2745367447642817"/>
+    </group_state>
+
+
     <group_state name="open" group="gripper">
         <joint name="panda_finger_joint1" value="0.04"/>
     </group_state>

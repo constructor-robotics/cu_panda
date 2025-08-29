@@ -31,5 +31,7 @@
 
   <include file="$(find cu_panda_moveit_config)/launch/move_group.launch" />
 
+  <node name="moveit_by_name" pkg="moveit_by_name" type="moveit_by_name" />
+
   <include file="$(dirname)/rviz.launch" if="$(arg rviz)" />
 </launch>
