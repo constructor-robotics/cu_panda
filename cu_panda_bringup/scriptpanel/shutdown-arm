@@ -1,0 +1,3 @@
+#!/bin/sh
+
+exec roslaunch franka_lock_unlock shutdown.launch hostname:=robot.franka.de username:=root password:=frankaemika

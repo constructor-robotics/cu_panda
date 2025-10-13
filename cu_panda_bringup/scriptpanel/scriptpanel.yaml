@@ -1,12 +1,20 @@
 config:
-    num_buttons_per_row: 2
+    num_buttons_per_row: 3
     button_width: 140
     button_height: 60
     font: LiberationMono:Bold
 scripts:
-    - label: Desk
-      script: desk
-      tooltip: manufacturer interface to start robot
+    - label: Unlock Arm
+      script: unlock-arm
+      tooltip: |
+        unlock joint breaks and calibrate gripper
+        requires pressing the circle button on the arm
+      group: A-setup-robot
+    - label: Shutdown Arm
+      script: shutdown-arm
+      tooltip: |
+        Switch off robot.
+        Make sure to disable the power after shutdown.
       group: A-setup-robot
     - label: Launch ROS
       script: launch-robot
@@ -15,6 +23,10 @@ scripts:
         only use after Desk initialization
       group: A-setup-robot
       terminal: true
+    - label: Desk
+      script: desk
+      tooltip: manufacturer interface to start robot
+        #  group: A-setup-robot
     - label: Reset Error
       script: reset-franka-error
       tooltip: |
