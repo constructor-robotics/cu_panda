@@ -10,12 +10,14 @@ scripts:
         unlock joint breaks and calibrate gripper
         requires pressing the circle button on the arm
       group: A-setup-robot
+      terminal: true
     - label: Shutdown Arm
       script: shutdown-arm
       tooltip: |
         Switch off robot.
         Make sure to disable the power after shutdown.
       group: A-setup-robot
+      terminal: true
     - label: Launch ROS
       script: launch-robot
       tooltip: |
@@ -25,8 +27,7 @@ scripts:
       terminal: true
     - label: Desk
       script: desk
-      tooltip: manufacturer interface to start robot
-        #  group: A-setup-robot
+      tooltip: manufacturer web interface
     - label: Reset Error
       script: reset-franka-error
       tooltip: |
