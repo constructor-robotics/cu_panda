@@ -42,3 +42,11 @@ scripts:
       script: move-present-gripper
       tooltip: move arm to present gripper position
       group: B-runtime
+    - label: Grasp
+      script: grasp
+      tooltip: slowly close gripper with low grasp force
+      group: C-gripper
+    - label: Open Gripper
+      script: open-gripper
+      tooltip: move fingers apart (let go of held object)
+      group: C-gripper
