@@ -42,5 +42,10 @@
       <param name="gain" value="75"/>
   </group>
 
+  <include file="$(find realsense2_camera)/launch/rs_camera.launch">
+    <arg name="enable_pointcloud" value="true"/>
+    <arg name="camera" value="realsense"/>
+  </include>
+
   <include file="$(dirname)/rviz.launch" if="$(arg rviz)" />
 </launch>

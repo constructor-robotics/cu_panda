@@ -133,4 +133,18 @@
     <origin xyz="${-0.35-0.095} 0 ${0.026}" rpy="0 0 0"/>
   </joint>
 
+  <link name="realsense_link">
+    <collision>
+      <geometry>
+        <box size="0.1 0.2 0.08"/>
+      </geometry>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+    </collision>
+  </link>
+  <joint name="realsense_table_joint" type="fixed">
+    <child link="realsense_link"/>
+    <parent link="table"/>
+    <origin xyz="-0.34866 0.48523 0.34558" rpy="-2.9583 2.6983 2.2201"/>
+  </joint>
+
 </robot>
