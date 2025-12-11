@@ -47,5 +47,7 @@
     <arg name="camera" value="realsense"/>
   </include>
 
+  <include file="$(find tts_piper)/launch/tts_standalone.launch" />
+
   <include file="$(dirname)/rviz.launch" if="$(arg rviz)" />
 </launch>
