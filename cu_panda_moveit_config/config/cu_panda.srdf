@@ -336,4 +336,5 @@
     <disable_collisions link1="panda_hand_sc" link2="panda_righttip_body" reason="User"/>
     <disable_collisions link1="panda_link7_sc" link2="panda_righttip_body" reason="User"/>
     <disable_collisions link1="panda_link6_sc" link2="panda_righttip_body" reason="User"/>
+    <disable_collisions link1="panda_hand_sc" link2="table" reason="User"/>
 </robot>
