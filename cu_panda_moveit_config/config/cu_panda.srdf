@@ -18,25 +18,23 @@
     </group>
     <!--GROUP STATES: Purpose: Define a named state for a particular group, in terms of joint values. This is useful to define states like 'folded arms'-->
     <group_state name="home" group="arm">
-        <joint name="panda_joint1" value="0.7593883575493828"/>
-        <joint name="panda_joint2" value="-0.1967880399935545"/>
-        <joint name="panda_joint3" value="0.3601177533007504"/>
-        <joint name="panda_joint4" value="-2.8748549823723764"/>
-        <joint name="panda_joint5" value="0.1480462713009781"/>
-        <joint name="panda_joint6" value="2.6951092229949105"/>
-        <joint name="panda_joint7" value="1.747318634997639"/>
+        <joint name="panda_joint1" value="0.759388"/>
+        <joint name="panda_joint2" value="-0.196788"/>
+        <joint name="panda_joint3" value="0.360118"/>
+        <joint name="panda_joint4" value="-2.87485"/>
+        <joint name="panda_joint5" value="0.148046"/>
+        <joint name="panda_joint6" value="2.69511"/>
+        <joint name="panda_joint7" value="1.74732"/>
     </group_state>
     <group_state name="present_gripper" group="arm">
-        <joint name="panda_joint1" value="-1.007538294916409"/>
-        <joint name="panda_joint2" value="-1.5137732266375894"/>
-        <joint name="panda_joint3" value="1.5487000532341397"/>
-        <joint name="panda_joint4" value="-1.8614056073673624"/>
-        <joint name="panda_joint5" value="0.026975830040376875"/>
-        <joint name="panda_joint6" value="2.8865027188240906"/>
-        <joint name="panda_joint7" value="2.2745367447642817"/>
+        <joint name="panda_joint1" value="-1.00754"/>
+        <joint name="panda_joint2" value="-1.51377"/>
+        <joint name="panda_joint3" value="1.5487"/>
+        <joint name="panda_joint4" value="-1.86141"/>
+        <joint name="panda_joint5" value="0.0269758"/>
+        <joint name="panda_joint6" value="2.8865"/>
+        <joint name="panda_joint7" value="2.27454"/>
     </group_state>
-
-
     <group_state name="open" group="gripper">
         <joint name="panda_finger_joint1" value="0.04"/>
     </group_state>
@@ -306,4 +304,36 @@
     <disable_collisions link1="panda_link2_sc" link2="panda_link3_sc" reason="User"/>
     <disable_collisions link1="panda_link1_sc" link2="panda_link2_sc" reason="User"/>
     <disable_collisions link1="panda_link0_sc" link2="panda_link1_sc" reason="User"/>
+    <disable_collisions link1="realsense_link" link2="table" reason="User"/>
+    <disable_collisions link1="behind_table_collider" link2="realsense_link" reason="User"/>
+    <disable_collisions link1="panda_mounting_plate" link2="realsense_link" reason="User"/>
+    <disable_collisions link1="panda_link0" link2="realsense_link" reason="User"/>
+    <disable_collisions link1="panda_link1" link2="realsense_link" reason="User"/>
+    <disable_collisions link1="panda_link2" link2="realsense_link" reason="User"/>
+    <disable_collisions link1="panda_link3" link2="realsense_link" reason="User"/>
+    <disable_collisions link1="panda_link4" link2="realsense_link" reason="User"/>
+    <disable_collisions link1="panda_link4_sc" link2="realsense_link" reason="User"/>
+    <disable_collisions link1="panda_link3_sc" link2="realsense_link" reason="User"/>
+    <disable_collisions link1="panda_link2_sc" link2="realsense_link" reason="User"/>
+    <disable_collisions link1="panda_link1_sc" link2="realsense_link" reason="User"/>
+    <disable_collisions link1="panda_link0_sc" link2="realsense_link" reason="User"/>
+    <disable_collisions link1="realsense_link" link2="wall" reason="User"/>
+    <disable_collisions link1="realsense_link" link2="window_collider" reason="User"/>
+    <disable_collisions link1="panda_lefttip_body" link2="panda_link6" reason="User"/>
+    <disable_collisions link1="panda_lefttip_body" link2="panda_link7" reason="User"/>
+    <disable_collisions link1="panda_hand" link2="panda_lefttip_body" reason="User"/>
+    <disable_collisions link1="panda_leftfinger" link2="panda_lefttip_body" reason="User"/>
+    <disable_collisions link1="panda_lefttip_body" link2="panda_rightfinger" reason="User"/>
+    <disable_collisions link1="panda_lefttip_body" link2="panda_righttip_body" reason="User"/>
+    <disable_collisions link1="panda_hand_sc" link2="panda_lefttip_body" reason="User"/>
+    <disable_collisions link1="panda_lefttip_body" link2="panda_link7_sc" reason="User"/>
+    <disable_collisions link1="panda_lefttip_body" link2="panda_link6_sc" reason="User"/>
+    <disable_collisions link1="panda_link6" link2="panda_righttip_body" reason="User"/>
+    <disable_collisions link1="panda_link7" link2="panda_righttip_body" reason="User"/>
+    <disable_collisions link1="panda_hand" link2="panda_righttip_body" reason="User"/>
+    <disable_collisions link1="panda_leftfinger" link2="panda_righttip_body" reason="User"/>
+    <disable_collisions link1="panda_rightfinger" link2="panda_righttip_body" reason="User"/>
+    <disable_collisions link1="panda_hand_sc" link2="panda_righttip_body" reason="User"/>
+    <disable_collisions link1="panda_link7_sc" link2="panda_righttip_body" reason="User"/>
+    <disable_collisions link1="panda_link6_sc" link2="panda_righttip_body" reason="User"/>
 </robot>
