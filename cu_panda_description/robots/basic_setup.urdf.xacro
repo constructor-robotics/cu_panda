@@ -1,5 +1,7 @@
 <?xml version="1.0"?>
 <robot xmlns:xacro="http://ros.org/wiki/xacro" name="cu_panda">
+  <xacro:arg name="with_shortfingertips" default="true"/>
+
   <xacro:include filename="$(find cu_panda_description)/urdf/franka_robot_no_tips.urdf.xacro"/>
 
   <xacro:franka_robot arm_id="panda"
@@ -146,5 +148,46 @@
     <parent link="table"/>
     <origin xyz="-0.34866 0.48523 0.34558" rpy="-2.9583 2.6983 2.2201"/>
   </joint>
+
+  <xacro:macro name="fingertip" params="side *origin">
+      <link name="panda_${side}tip_body">
+      <visual>
+        <origin xyz="0 0 0" rpy="0 0 0"/>
+        <geometry>
+          <mesh filename="package://cu_panda_description/meshes/panda_short_finger_adapted.stl" />
+        </geometry>
+        <material name="darkgrey">
+          <color rgba="0.1 0.1 0.1 1.0"/>
+        </material>
+      </visual>
+      <collision>
+        <origin xyz="0 -0.0045 ${(0.029+0.009)/2-0.009}" rpy="0 0 0"/>
+        <geometry>
+          <box size="0.02 0.009 ${0.029+0.009}"/>
+        </geometry>
+      </collision>
+    </link>
+    <joint name="panda_${side}tip_joint" type="fixed">
+      <parent link="panda_${side}tip_mount" />
+      <child link="panda_${side}tip_body" />
+      <xacro:insert_block name="origin"/>
+    </joint>
+    <link name="panda_${side}tip"/>
+    <joint name="panda_${side}tip_fixed_joint" type="fixed">
+      <parent link="panda_${side}tip_body" />
+      <child link="panda_${side}tip" />
+      <origin xyz="0 -0.009 0.019" rpy="0 0 0"/>
+    </joint>
+  </xacro:macro>
+
+  <xacro:if value="$(arg with_shortfingertips)">
+    <xacro:fingertip side="left">
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 0"/>
+    </xacro:fingertip>
+
+    <xacro:fingertip side="right">
+      <origin xyz="0.0 0.0 0.0" rpy="0 0 ${tau/2}"/>
+    </xacro:fingertip>
+  </xacro:if>
 
 </robot>

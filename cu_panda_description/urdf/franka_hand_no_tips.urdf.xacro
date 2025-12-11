@@ -51,17 +51,23 @@
           <box size="17.5e-3 7e-3 23.5e-3" />
         </geometry>
       </collision>
-      <!-- rubber tip with which to grasp -->
+      <!-- mounting segment for tips -->
       <collision>
-        <origin xyz="0 7.58e-3 45.25e-3" rpy="0 0 0" />
+        <origin xyz="0 14.5e-3 45.25e-3" rpy="0 0 0" />
         <geometry>
-          <box size="17.5e-3 15.2e-3 18.5e-3" />
+          <box size="17.5e-3 10.2e-3 18.5e-3" />
         </geometry>
       </collision>
       <xacro:if value="${gazebo}">
         <xacro:inertial_props name="leftfinger" />
       </xacro:if>
     </link>
+    <link name="${arm_id}_lefttip_mount"/>
+    <joint name="${arm_id}_lefttip_mount_joint" type="fixed">
+      <parent link="${arm_id}_leftfinger" />
+      <child link="${arm_id}_lefttip_mount" />
+      <origin xyz="0.0 0.01 0.045" rpy="0 0 0"/>
+    </joint>
     <link name="${arm_id}_rightfinger">
       <visual>
         <origin xyz="0 0 0" rpy="0 0 ${pi}" />
@@ -90,17 +96,23 @@
           <box size="17.5e-3 7e-3 23.5e-3" />
         </geometry>
       </collision>
-      <!-- rubber tip with which to grasp -->
+      <!-- mounting segment for tips -->
       <collision>
-        <origin xyz="0 -7.58e-3 45.25e-3" rpy="0 0 0" />
+        <origin xyz="0 -14.5e-3 45.25e-3" rpy="0 0 0" />
         <geometry>
-          <box size="17.5e-3 15.2e-3 18.5e-3" />
+          <box size="17.5e-3 10.2e-3 18.5e-3" />
         </geometry>
       </collision>
       <xacro:if value="${gazebo}">
         <xacro:inertial_props name="rightfinger" />
       </xacro:if>
     </link>
+    <link name="${arm_id}_righttip_mount"/>
+    <joint name="${arm_id}_righttip_mount_joint" type="fixed">
+      <parent link="${arm_id}_rightfinger" />
+      <child link="${arm_id}_righttip_mount" />
+      <origin xyz="0.0 -0.01 0.045" rpy="0 0 0"/>
+    </joint>
     <joint name="${arm_id}_finger_joint1" type="prismatic">
       <parent link="${arm_id}_hand" />
       <child link="${arm_id}_leftfinger" />
