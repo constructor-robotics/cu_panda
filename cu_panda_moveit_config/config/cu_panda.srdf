@@ -44,6 +44,7 @@
     <!--END EFFECTOR: Purpose: Represent information about an end effector.-->
     <end_effector name="gripper" parent_link="panda_hand_tcp" group="gripper" parent_group="arm"/>
     <!--DISABLE COLLISIONS: By default it is assumed that any link of the robot could potentially come into collision with any other link in the robot. This tag disables collision checking between a specified pair of links. -->
+    <disable_default_collisions link="panda_hand_sc" />
     <disable_collisions link1="behind_table_collider" link2="panda_link0" reason="Never"/>
     <disable_collisions link1="behind_table_collider" link2="panda_link0_sc" reason="Never"/>
     <disable_collisions link1="behind_table_collider" link2="panda_link1" reason="Never"/>
