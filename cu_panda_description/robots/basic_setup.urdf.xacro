@@ -5,7 +5,7 @@
   <xacro:include filename="$(find cu_panda_description)/urdf/franka_robot_no_tips.urdf.xacro"/>
 
   <xacro:franka_robot arm_id="panda"
-                      joint_limits="${xacro.load_yaml('$(find franka_description)/robots/panda/joint_limits.yaml')}"
+                      joint_limits="${xacro.load_yaml('$(find cu_panda_description)/config/joint_limits.yaml')}"
                       hand="true"
                       tcp_xyz="0 0 0.1034"
                       tcp_rpy="0 0 0">
