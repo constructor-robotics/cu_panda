@@ -4,10 +4,6 @@ project(cu_panda_description)
 find_package(catkin REQUIRED)
 catkin_package()
 
-install(DIRECTORY launch
-  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/
-)
-
-install(DIRECTORY meshes urdf robots
+install(DIRECTORY meshes urdf robots config launch
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/
 )
