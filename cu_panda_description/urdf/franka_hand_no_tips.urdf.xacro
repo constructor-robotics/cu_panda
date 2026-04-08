@@ -13,7 +13,6 @@
     <xacro:link_with_sc name="hand" gazebo="${gazebo}">
       <self_collision_geometries>
         <xacro:collision_capsule xyz="0 0 0.04" direction="y" radius="${0.04+safety_distance}" length="0.1" />
-        <xacro:collision_capsule xyz="0 0 0.10" direction="y" radius="${0.02+safety_distance}" length="0.1" />
       </self_collision_geometries>
     </xacro:link_with_sc>
 
@@ -23,6 +22,14 @@
       <origin xyz="${tcp_xyz}" rpy="${tcp_rpy}" />
       <parent link="${arm_id}_hand" />
       <child link="${arm_id}_hand_tcp" />
+    </joint>
+    <link name="${arm_id}_hand_tcp_sc">
+        <xacro:collision_capsule xyz="0 0 0.0034" direction="y" radius="${0.02+safety_distance}" length="0.1" />
+    </link>
+    <joint name="${arm_id}_hand_tcp_sc_joint" type="fixed">
+      <origin xyz="0 0 0" rpy="0 0 0" />
+      <parent link="${arm_id}_hand_tcp" />
+      <child link="${arm_id}_hand_tcp_sc" />
     </joint>
     <link name="${arm_id}_leftfinger">
       <visual>
