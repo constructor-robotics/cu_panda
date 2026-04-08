@@ -14,7 +14,7 @@
   <link name="panda_mounting_plate">
     <visual>
       <geometry>
-        <box size="0.32 0.216 0.026"/>
+        <box size="0.32 0.216 0.024"/>
       </geometry>
       <material name="lightblack">
         <color rgba="0.1 0.1 0.1 1.0"/>
@@ -23,7 +23,7 @@
     </visual>
     <collision>
       <geometry>
-        <box size="0.32 0.216 0.034"/>
+        <box size="0.32 0.216 0.032"/>
       </geometry>
       <origin xyz="0 0 0.017" rpy="0 0 0"/>
     </collision>
@@ -32,7 +32,7 @@
   <joint name="panda_mounting_plate_joint" type="fixed">
     <child link="panda_link0"/>
     <parent link="panda_mounting_plate"/>
-    <origin xyz="0.033 0 0.026" rpy="0 0 0"/>
+    <origin xyz="0.033 0 0.024" rpy="0 0 0"/>
   </joint>
 
   <link name="table">
