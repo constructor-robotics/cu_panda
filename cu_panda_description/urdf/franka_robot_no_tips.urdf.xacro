@@ -14,7 +14,7 @@
         tcp_xyz="${tcp_xyz}"
         tcp_rpy="${tcp_rpy}"
         connected_to="${arm_id}_link8"
-        safety_distance="0.03"
+        safety_distance="0.02"
         gazebo="${gazebo}"
     />
 
