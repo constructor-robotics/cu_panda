@@ -133,7 +133,6 @@
     <parent link="table"/>
     <origin xyz="${-0.35-0.095} 0 ${0.026}" rpy="0 0 0"/>
   </joint>
- <!-- # -0.353; 0.48923; 0.3458 -->
   <link name="realsense_link">
     <collision>
       <geometry>
