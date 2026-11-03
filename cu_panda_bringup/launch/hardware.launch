@@ -26,7 +26,7 @@
   <node name="joint_state_publisher" type="joint_state_publisher" pkg="joint_state_publisher" output="screen">
     <rosparam if="$(arg load_gripper)" param="source_list">[franka_state_controller/joint_states, franka_gripper/joint_states] </rosparam>
     <rosparam unless="$(arg load_gripper)" param="source_list">[franka_state_controller/joint_states] </rosparam>
-    <param name="rate" value="30"/>
+    <param name="rate" value="100"/>
   </node>
 
   <include file="$(find cu_panda_moveit_config)/launch/move_group.launch" />
