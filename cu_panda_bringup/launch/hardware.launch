@@ -8,10 +8,12 @@
 
   <include file="$(find cu_panda_description)/launch/upload_description.launch" />
 
-  <include file="$(find franka_gripper)/launch/franka_gripper.launch" if="$(arg load_gripper)">
-    <arg name="robot_ip" value="$(arg robot_ip)" />
-    <arg name="arm_id"   value="$(arg arm_id)" />
-  </include>
+  <node name="franka_gripper" pkg="franka_gripper" type="franka_gripper_node" output="screen">
+    <param name="robot_ip" value="$(arg robot_ip)"/>
+    <param name="stop_at_shutdown" value="$(arg stop_at_shutdown)" />
+    <rosparam command="load" file="$(find cu_panda_bringup)/config/franka_gripper_node.yaml" />
+    <rosparam param="joint_names" subst_value="true">$(arg joint_names)</rosparam>
+  </node>
 
   <node name="franka_control" pkg="franka_control" type="franka_control_node" output="screen" required="true">
     <rosparam command="load" file="$(find cu_panda_bringup)/config/franka_control_node.yaml" subst_value="true" />
